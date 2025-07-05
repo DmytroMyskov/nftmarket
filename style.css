@@ -1,0 +1,23 @@
+:root {
+  --font-primary: 'DM Serif Text', serif;
+  --font-secondary: 'Inter', sans-serif;
+  --color-primary: #D6EF0E;
+  --color-secondary: #FFFFFF;
+  --color-tertiary: #131E3A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-secondary);
+  color: var(--color-secondary);
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+span {
+  color: var(--color-primary);
+}
