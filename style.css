@@ -617,6 +617,21 @@ header {
   li {
     position: relative;
     height: 311px;
+    border-radius: 8px;
+    background: #131E3A;
+    background: linear-gradient(0deg, rgba(19, 30, 58, 1) 0%, rgba(19, 30, 58, 0) 92%);
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background: transparent;
+      transform: scale(1.05);
+    }
+
+    img:first-child {
+      position: relative;
+      z-index: -1;
+    }
 
     img:nth-child(2) {
       position: absolute;
@@ -649,6 +664,20 @@ header {
 
   .artists-list-big {
     position: relative;
+    border-radius: 8px;
+    background: linear-gradient(0deg, rgba(19, 30, 58, 1) 0%, rgba(19, 30, 58, 0) 92%);
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+
+    img:first-child {
+      position: relative;
+      z-index: -1;
+    }
 
     img:nth-child(2) {
       position: absolute;
