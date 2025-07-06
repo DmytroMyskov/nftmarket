@@ -39,9 +39,9 @@ function createAutoTimer(prefix, initialSeconds) {
 }
 
 createAutoTimer('main', 4 * 60 * 60);
-createAutoTimer('timer1', 4 * 60 * 60);
-createAutoTimer('timer2', 4 * 60 * 60);
-createAutoTimer('timer3', 4 * 60 * 60);
+createAutoTimer('timer1', 6 * 55 * 60);
+createAutoTimer('timer2', 6 * 55 * 60);
+createAutoTimer('timer3', 6 * 55 * 60);
 
 
 function createCounter(counterElement, initialValue) {
