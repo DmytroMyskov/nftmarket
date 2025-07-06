@@ -1,38 +1,92 @@
-const hoursSpan = document.getElementById('hours');
-const minutesSpan = document.getElementById('minutes');
-const secondsSpan = document.getElementById('seconds');
-const initialTotalSeconds = 4 * 60 * 60;
+function createAutoTimer(prefix, initialSeconds) {
+  const hoursSpan = document.querySelector(`[data-id="${prefix}-hours"]`);
+  const minutesSpan = document.querySelector(`[data-id="${prefix}-minutes"]`);
+  const secondsSpan = document.querySelector(`[data-id="${prefix}-seconds"]`);
 
-let totalSeconds = initialTotalSeconds;
-let timerInterval;
+  let totalSeconds = initialSeconds;
+  let timerInterval;
 
-// Функція для оновлення відображення таймера
-function updateDisplay() {
-  if (totalSeconds <= 0) {
-    clearInterval(timerInterval);
-    hoursSpan.textContent = '00';
-    minutesSpan.textContent = '00';
-    secondsSpan.textContent = '00';
-    return;
+  function updateDisplay() {
+    if (totalSeconds <= 0) {
+      clearInterval(timerInterval);
+      hoursSpan.textContent = '00';
+      minutesSpan.textContent = '00';
+      secondsSpan.textContent = '00';
+    }
+
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+
+    hoursSpan.textContent = String(h).padStart(2, '0');
+    minutesSpan.textContent = String(m).padStart(2, '0');
+    secondsSpan.textContent = String(s).padStart(2, '0');
+
+    totalSeconds--;
   }
 
-  const h = Math.floor(totalSeconds / 3600);
-  const m = Math.floor((totalSeconds % 3600) / 60);
-  const s = totalSeconds % 60;
+  function startTimer() {
+    updateDisplay();
+    if (totalSeconds > 0) {
+      timerInterval = setInterval(updateDisplay, 1000);
+    } else {
+      updateDisplay();
+    }
+  }
 
-  hoursSpan.textContent = String(h).padStart(2, '0');
-  minutesSpan.textContent = String(m).padStart(2, '0');
-  secondsSpan.textContent = String(s).padStart(2, '0');
+  startTimer();
 
-  totalSeconds--; // Зменшуємо лічильник після оновлення
 }
 
-// Функція для запуску таймера
-function startTimer() {
-  // Оновлюємо дисплей негайно, щоб не було затримки на 1 секунду перед першим оновленням
+createAutoTimer('main', 4 * 60 * 60);
+createAutoTimer('timer1', 4 * 60 * 60);
+createAutoTimer('timer2', 4 * 60 * 60);
+createAutoTimer('timer3', 4 * 60 * 60);
+
+
+function createCounter(counterElement, initialValue) {
+  const counterValueSpan = counterElement.querySelector('[data-counter-value]');
+  const incrementBtn = counterElement.querySelector('[data-action="increment"]');
+  const decrementBtn = counterElement.querySelector('[data-action="decrement"]');
+
+  let counter = initialValue;
+
+  function updateDisplay() {
+    counterValueSpan.textContent = counter;
+  }
+
+  incrementBtn.addEventListener('click', () => {
+    counter++;
+    updateDisplay();
+  });
+
+  decrementBtn.addEventListener('click', () => {
+    counter--;
+    updateDisplay();
+  });
+
   updateDisplay();
-  timerInterval = setInterval(updateDisplay, 1000); // Запускаємо інтервал
 }
 
-// Автоматичний запуск таймера при завантаженні сторінки
-startTimer();
+const allCounterCards = document.querySelectorAll('.counter-card');
+
+allCounterCards.forEach(card => {
+  const counterId = card.dataset.counterId;
+
+  let initialVal;
+
+  switch (counterId) {
+    case 'counter1':
+      initialVal = 490;
+      break;
+    case 'counter2':
+      initialVal = 490;
+      break;
+    case 'counter3':
+      initialVal = 490;
+      break;
+    default:
+      initialVal = 0;
+  }
+  createCounter(card, initialVal);
+});

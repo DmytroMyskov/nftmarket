@@ -74,8 +74,9 @@
               <ul>
                 <li>
                   <span>Ends in</span>
-                  <div id="countdown" class="countdown">
-                    <span id="hours">04</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                  <div class="timer-container main-timer">
+                    <span data-id="main-hours">04</span>:<span data-id="main-minutes">00</span>:<span
+                      data-id="main-seconds">00</span>
                   </div>
                 </li>
 
@@ -94,7 +95,7 @@
       <section class="marketplace">
         <div class="title-marketplace">
           <h2>
-            <span>Amazing</span> and Super
+            <span>Amazing</span> and Super <br>
             Unique Art of This <span>Week</span>
           </h2>
 
@@ -103,54 +104,148 @@
           </button>
         </div>
 
-        <div class="carousel-container">
-          <div class="carousel-content">
-            <ul>
-              <li>
-                <img src="images/item-1.png" alt="">
+        <div class="cards">
+          <ul>
+            <li>
+              <img class="card-image" src="images/item-1.png" alt="">
 
-                <div>
+              <div class="card-info">
+                <div class="card-title">
                   <h3>Cyberpunk Cocomo</h3>
-                  490ETH
+
+                  <div class="counter-card" data-counter-id="counter1">
+                    <div class="counter-display-wrapper">
+                      <span class="counter-value" data-counter-value>490</span>
+
+                      <span class="currency-unit">ETH</span>
+                    </div>
+
+                    <div class="counter-controls">
+                      <button data-action="increment" class="arrow-button">
+                        <img src="images/icons/arrow-up.svg" alt="">
+                      </button>
+
+                      <img src="images/icons/arrow-medium.svg" alt="">
+
+                      <button data-action="decrement" class="arrow-button">
+                        <img src="images/icons/arrow-down.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  Ending In
-                  03:24:56
+
+                <div class="card-timer">
+                  <div class="text">
+                    <span class="ending">Ending In</span>
+
+                    <div class="timer-container sub-timer">
+                      <img src="images/icons/clock.svg" alt="">
+
+                      <div id="countdown-1" class="countdown">
+                        <span data-id="timer1-hours" class="hours">00</span>:<span data-id="timer1-minutes"
+                          class="minutes">05</span>:<span data-id="timer1-seconds" class="seconds">00</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <button>Place A Bid</button>
                 </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <img src="images/item-2.png" alt="">
+            <li>
+              <img class="card-image" src="images/item-2.png" alt="">
 
-                <div>
+              <div class="card-info">
+                <div class="card-title">
                   <h3>Charge, Qi tiao yu</h3>
-                  490ETH
+
+                  <div class="counter-card" data-counter-id="counter2">
+                    <div class="counter-display-wrapper">
+                      <span class="counter-value" data-counter-value>490</span>
+
+                      <span class="currency-unit">ETH</span>
+                    </div>
+
+                    <div class="counter-controls">
+                      <button data-action="increment" class="arrow-button">
+                        <img src="images/icons/arrow-up.svg" alt="">
+                      </button>
+
+                      <img src="images/icons/arrow-medium.svg" alt="">
+
+                      <button data-action="decrement" class="arrow-button">
+                        <img src="images/icons/arrow-down.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  Ending In
-                  03:24:56
+                <div class="card-timer">
+                  <div class="text">
+                    <span class="ending">Ending In</span>
+
+                    <div class="timer-container sub-timer">
+                      <img src="images/icons/clock.svg" alt="">
+
+                      <div id="countdown-2" class="countdown">
+                        <span data-id="timer2-hours" class="hours">00</span>:<span data-id="timer2-minutes"
+                          class="minutes">10</span>:<span data-id="timer2-seconds" class="seconds">00</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <button>Place A Bid</button>
                 </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <img src="images/item-3.png" alt="">
+            <li>
+              <img class="card-image" src="images/item-3.png" alt="">
 
-                <div>
+              <div class="card-info">
+                <div class="card-title">
                   <h3>Surgeon, Josh Rife</h3>
-                  490ETH
+
+                  <div class="counter-card" data-counter-id="counter3">
+                    <div class="counter-display-wrapper">
+                      <span class="counter-value" data-counter-value>490</span>
+
+                      <span class="currency-unit">ETH</span>
+                    </div>
+
+                    <div class="counter-controls">
+                      <button data-action="increment" class="arrow-button">
+                        <img src="images/icons/arrow-up.svg" alt="">
+                      </button>
+
+                      <img src="images/icons/arrow-medium.svg" alt="">
+
+                      <button data-action="decrement" class="arrow-button">
+                        <img src="images/icons/arrow-down.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  Ending In
-                  03:24:56
+                <div class="card-timer sub-timer">
+                  <div class="text">
+                    <span class="ending">Ending In</span>
+                    <div class="timer-container">
+                      <img src="images/icons/clock.svg" alt="">
+
+                      <div id="countdown-3" class="countdown">
+                        <span data-id="timer3-hours" class="hours">00</span>:<span data-id="timer3-minutes"
+                          class="minutes">15</span>:<span data-id="timer3-seconds" class="seconds">00</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <button>Place A Bid</button>
                 </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
