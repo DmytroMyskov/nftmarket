@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --font-primary: 'Lora', serif;
   --font-secondary: 'Inter', sans-serif;
@@ -83,6 +87,7 @@ header {
     font-weight: 700;
     line-height: 120%;
     transition: 0.3s;
+    color: var(--color-tertiary);
 
     &:hover {
       background-color: transparent;
@@ -131,6 +136,7 @@ header {
       font-weight: 700;
       line-height: 120%;
       transition: 0.3s;
+      color: var(--color-tertiary);
 
       &:hover {
         background-color: transparent;
@@ -269,7 +275,7 @@ header {
         &:hover {
           background-color: var(--color-primary);
           border: 1px solid var(--color-primary);
-          color: var(--color-secondary);
+          color: var(--color-tertiary);
           transition: 0.3s;
         }
       }
@@ -278,6 +284,9 @@ header {
 }
 
 .marketplace {
+  margin-block: 92px;
+  padding-block: 92px;
+
   .title-marketplace {
     display: flex;
     justify-content: space-between;
@@ -299,6 +308,7 @@ header {
     font-size: 16px;
     font-weight: 700;
     line-height: 120%;
+    color: var(--color-tertiary);
     transition: 0.3s;
 
     &:hover {
@@ -435,7 +445,7 @@ header {
         &:hover {
           background-color: var(--color-primary);
           border: 1px solid var(--color-primary);
-          color: var(--color-secondary);
+          color: var(--color-tertiary);
           transition: 0.3s;
         }
       }
@@ -458,5 +468,90 @@ header {
         color: #838382;
       }
     }
+  }
+}
+
+.creation {
+  margin-block: 92px;
+  padding-block: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left-creation {
+    width: 426px;
+
+    h2 {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 120%;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 160%;
+      margin-block: 20px 40px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .buttons button {
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      width: 176px;
+      height: 52px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 120%;
+      transition: 0.3s;
+      color: var(--color-tertiary);
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        transition: 0.3s;
+      }
+    }
+
+    .buttons a {
+      font-family: var(--font-secondary);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 120%;
+      color: #FFFFFD;
+      transition: 0.3s;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid var(--color-primary);
+      }
+    }
+  }
+
+  .right-creation {
+    position: relative;
+    width: 740px;
+    height: 559px;
+  }
+
+  .creation-1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .creation-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
   }
 }
