@@ -227,11 +227,20 @@ header {
       li {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         gap: 8px;
         font-size: 16px;
         font-weight: 700;
         line-height: 160%;
+      }
+
+      #hours,
+      #minutes,
+      #seconds {
+        font-family: var(--font-secondary);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 160%;
+        color: var(--color-secondary);
       }
 
       li span {
